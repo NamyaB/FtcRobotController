@@ -1,7 +1,9 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+@TeleOp
 public class HelloWorld extends OpMode {
     enum State {
         START,
@@ -29,6 +31,7 @@ public class HelloWorld extends OpMode {
     public void loop() {
         double forwardSpeed = gamepad1.left_stick_y;
         telemetry.addData("right stick", gamepad1.right_stick_x);
+        telemetry.addData("left stick", -gamepad1.left_stick_y);
         if (gamepad1.b) {
             telemetry.addData("B button", " is pressed");
         } else {
